@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './App.css';
 
 import {
     BrowserRouter as Router,
@@ -9,18 +8,18 @@ import {
 import Dashboard from "./pages/Dashboard/Dashboard";
 import Map from "./pages/Map/Map";
 import Charts from "./pages/Charts/Charts";
-import Grid from "./pages/Grid/Grid";
+import DataGrid from "./pages/DataGrid/DataGrid";
 
 class App extends Component {
     render() {
         return (
 
             <Router>
-                <div className="container">
+                <div className="App">
                     <Route exact path="/" component={Dashboard}/>
                     <Route exact path="/map" component={Map}/>
                     <Route exact path="/charts" component={Charts}/>
-                    <Route exact path="/grid" component={Grid}/>
+                    <Route exact path="/grid" component={DataGrid}/>
                 </div>
             </Router>
         );

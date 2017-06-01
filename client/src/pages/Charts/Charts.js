@@ -47,8 +47,8 @@ class Charts extends Component {
 
         return (
             <div className="Charts">
-                <h1>Charts</h1>
-                <Grid>
+                <Grid fluid>
+                    <h1>Charts</h1>
                     <Row className="show-grid">
                         <Col xs={6}>
                             <Line data={this.getData()}/>

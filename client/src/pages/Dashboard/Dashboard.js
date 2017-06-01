@@ -17,8 +17,8 @@ class Dashboard extends Component {
                     `;
         return (
             <div className="Dashboard">
-                <h1>Dashboard</h1>
-                <Grid>
+                <Grid fluid>
+                    <h1>Dashboard</h1>
                     <Row className="show-grid">
                         <Col xs={3}>
                             <Panel>

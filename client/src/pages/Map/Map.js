@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './Map.css';
 import {withGoogleMap, GoogleMap, Marker} from "react-google-maps";
+import {Grid} from "react-bootstrap";
 
 
 class Map extends Component {
@@ -38,16 +39,18 @@ class Map extends Component {
         return (
 
             <div className="Map">
-                <h1>Map</h1>
-                <GettingStartedGoogleMap
-                    containerElement={
-                        <div style={{height: `800px`}}/>
-                    }
-                    mapElement={
-                        <div style={{height: `800px`}}/>
-                    }
-                    markers={this.state.markers}
-                />
+                <Grid fluid>
+                    <h1>Map</h1>
+                    <GettingStartedGoogleMap
+                        containerElement={
+                            <div style={{height: `800px`}}/>
+                        }
+                        mapElement={
+                            <div style={{height: `800px`}}/>
+                        }
+                        markers={this.state.markers}
+                    />
+                </Grid>
             </div>
         );
     }

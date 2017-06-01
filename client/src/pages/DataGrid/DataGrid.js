@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
+import {Grid, Col, Row} from "react-bootstrap";
 
 const ReactDataGrid = require('react-data-grid');
 
-class Grid extends Component {
+class DataGrid extends Component {
 
     constructor(props) {
         super(props);
@@ -31,24 +32,28 @@ class Grid extends Component {
     }
 
     rowGetter(i) {
-        console.log(this);
         return this._rows[i];
     }
 
     render() {
         return (
 
-            <div className="Grid">
+            <Grid fluid>
+
                 <h1>Grid</h1>
-                <ReactDataGrid
-                    columns={this._columns}
-                    rowGetter={this.rowGetter.bind(this)}
-                    rowsCount={this._rows.length}
-                    minHeight={500}/>
-            </div>
+                <Row>
+                    <Col xs="12">
+                        <ReactDataGrid
+                            columns={this._columns}
+                            rowGetter={this.rowGetter.bind(this)}
+                            rowsCount={this._rows.length}
+                            minHeight={500}/>
+                    </Col>
+                </Row>
+            </Grid>
         );
     }
 
 }
 
-export default Grid;
+export default DataGrid;
