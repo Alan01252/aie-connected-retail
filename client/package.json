@@ -1,0 +1,27 @@
+{
+  "name": "aie-connected-retail",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "chart.js": "^2.6.0",
+    "react": "^15.5.4",
+    "react-bootstrap": "^0.31.0",
+    "react-chartjs-2": "^2.1.0",
+    "react-data-grid": "^2.0.46",
+    "react-dom": "^15.5.4",
+    "react-router-dom": "^4.1.1",
+    "styled-components": "^2.0.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "eslint": "^3.19.0",
+    "react-scripts": "1.0.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
