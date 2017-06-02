@@ -13,42 +13,43 @@ class Dashboard extends Component {
         const Title = styled.h1`
                         font-size: 1.5em;
                         text-align: center;
-                        color: palevioletred;
+                        color: white;
                     `;
         return (
             <div className="Dashboard">
                 <Grid fluid>
-                    <h1>Dashboard</h1>
+                    <h1><Title>CONNECTED RETAIL</Title></h1>
                     <Row className="show-grid">
-                        <Col xs={3}>
+                        <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
-                                <Title>
-                                    <Link to="/map">
-                                        Map
-                                    </Link>
-                                </Title>
+                                <Link to="/map">
+                                    Map
+                                </Link>
                             </Panel>
                         </Col>
-                        <Col xs={3}>
+                        <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
-                                <Title>
-                                    <Link to="/charts">
-                                        Charts
-                                    </Link>
-                                </Title>
+                                <Link to="/charts">
+                                    Charts
+                                </Link>
                             </Panel>
                         </Col>
-                        <Col xs={3}>
+                        <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
-                                <Title>
-                                    <Link to="/grid">
-                                        Grid
-                                    </Link>
-                                </Title>
+                                <Link to="/grid">
+                                    Grid
+                                </Link>
                             </Panel>
                         </Col>
-                        <Col xs={3}>
-                            <Panel><Title>Page Four</Title></Panel>
+                        <Col bsClass="col-md-5ths col-" xs="3">
+                            <Panel>
+                                Page Four
+                            </Panel>
+                        </Col>
+                        <Col bsClass="col-md-5ths col-" xs="3">
+                            <Panel>
+                                Page Five
+                            </Panel>
                         </Col>
                     </Row>
                 </Grid>

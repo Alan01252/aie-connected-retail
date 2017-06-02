@@ -7,7 +7,6 @@ class DataGrid extends Component {
 
     constructor(props) {
         super(props);
-        console.log(this);
         this.createRows();
         this._columns = [
             {key: 'id', name: 'ID'},
@@ -27,8 +26,6 @@ class DataGrid extends Component {
 
 
         this._rows = rows;
-
-        console.log(this._rows);
     }
 
     rowGetter(i) {

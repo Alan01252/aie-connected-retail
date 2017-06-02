@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Map from "./pages/Map/Map";
 import Charts from "./pages/Charts/Charts";
 import DataGrid from "./pages/DataGrid/DataGrid";
+import './App.css';
 
 class App extends Component {
     render() {
