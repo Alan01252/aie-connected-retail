@@ -27,7 +27,8 @@ class Map extends Component {
 
                     <ReactMapboxGl
                         style={"mapbox://styles/mapbox/basic-v9"}
-                        center={[-1.109970527, 51.52916347]}
+                        center={[-4.3, 54.7]}
+                        zoom={[5]}
                         accessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
                         containerStyle={{
                             height: "800px",
