@@ -3,6 +3,7 @@ import './Dashboard.css';
 import {Grid, Row, Col, Panel} from 'react-bootstrap';
 import styled from 'styled-components';
 import {Link} from "react-router-dom";
+import Notification from "./Notification";
 
 class Dashboard extends Component {
 
@@ -17,8 +18,9 @@ class Dashboard extends Component {
                     `;
         return (
             <div className="Dashboard">
+                <Notification />
                 <Grid fluid>
-                    <h1><Title>CONNECTED RETAIL</Title></h1>
+                    <Title>CONNECTED RETAIL</Title>
                     <Row className="show-grid">
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>

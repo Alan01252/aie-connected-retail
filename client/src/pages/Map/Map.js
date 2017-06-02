@@ -1,32 +1,21 @@
 import React, {Component} from 'react';
 import './Map.css';
 import {Grid} from "react-bootstrap";
-import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
+import ReactMapboxGl from "react-mapbox-gl";
 
 class Map extends Component {
-
-    state = {
-        markers: [{
-            position: {
-                lat: 51.378,
-                lng: 0.4360,
-            },
-            key: `London`,
-            defaultAnimation: 2,
-        }],
-    };
 
     render() {
 
 
+        /* eslint-disable */
         return (
-
             <div className="Map">
                 <Grid fluid>
                     <h1>Map</h1>
 
                     <ReactMapboxGl
-                        style={"mapbox://styles/mapbox/basic-v9"}
+                        style='mapbox://styles/alan01252/cj3fsfzx4000n2rqpkduuhlqh'
                         center={[-4.3, 54.7]}
                         zoom={[5]}
                         accessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
@@ -39,6 +28,8 @@ class Map extends Component {
                 </Grid>
             </div>
         );
+
+        /* eslint-enable */
     }
 }
 
