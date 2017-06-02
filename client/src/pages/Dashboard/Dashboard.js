@@ -25,32 +25,32 @@ class Dashboard extends Component {
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
                                 <Link to="/map">
-                                    Map
+                                    Regional Performance
                                 </Link>
                             </Panel>
                         </Col>
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
                                 <Link to="/charts">
-                                    Charts
+                                    Store Performance
                                 </Link>
                             </Panel>
                         </Col>
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
                                 <Link to="/grid">
-                                    Grid
+                                    Search for Product
                                 </Link>
                             </Panel>
                         </Col>
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
-                                Page Four
+                                Promotions
                             </Panel>
                         </Col>
                         <Col bsClass="col-md-5ths col-" xs="3">
                             <Panel>
-                                Page Five
+                                Notifications
                             </Panel>
                         </Col>
                     </Row>
