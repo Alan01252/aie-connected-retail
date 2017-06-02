@@ -1,35 +1,36 @@
 import React, {Component} from 'react';
 import {Grid, Col, Row} from "react-bootstrap";
+import ProductFetcher from './ProductFetcher';
 
 const ReactDataGrid = require('react-data-grid');
 
 class DataGrid extends Component {
 
+    state = {
+        products: []
+    };
+
     constructor(props) {
         super(props);
         this.createRows();
         this._columns = [
-            {key: 'id', name: 'ID'},
-            {key: 'title', name: 'Title'},
-            {key: 'count', name: 'Count'}];
+            {key: 'object_id', name: 'Object ID'},
+            {key: 'latitude', name: 'Latitude'},
+            {key: 'longitude', name: 'Longitude'}
+        ];
     }
 
     createRows() {
         let rows = [];
-        for (let i = 1; i < 1000; i++) {
-            rows.push({
-                id: i,
-                title: 'Title ' + i,
-                count: i * 1000
-            });
-        }
-
-
-        this._rows = rows;
+        ProductFetcher.search(null, (products) => {
+            this.setState({
+                products: products
+            })
+        });
     }
 
     rowGetter(i) {
-        return this._rows[i];
+        return this.state.products[i];
     }
 
     render() {
@@ -43,7 +44,7 @@ class DataGrid extends Component {
                         <ReactDataGrid
                             columns={this._columns}
                             rowGetter={this.rowGetter.bind(this)}
-                            rowsCount={this._rows.length}
+                            rowsCount={this.state.products.length}
                             minHeight={500}/>
                     </Col>
                 </Row>

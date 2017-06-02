@@ -1,0 +1,82 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: AIE Connected Retail Application
+# during dev, should point to your local machine
+host: localhost:10010
+# basePath prefixes all resource paths 
+basePath: /
+# 
+schemes:
+  - http
+  - https
+# format of bodies a client can send (Content-Type)
+consumes:
+  - application/json
+# format of the responses to the client (Accepts)
+produces:
+  - application/json
+paths:
+  /product/:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: product
+    get:
+      description: Returns all product
+      # used as the method name of the controller
+      operationId: get
+      parameters:
+        - name: location
+          in: query
+          description: The name of the location. Currently only supports uk
+          required: false
+          type: string
+        - name: limit
+          in: query
+          description: The number of objects to be returned. Limit can range between 1 and 100
+          type: integer
+        - name:  starting_after
+          in: query
+          type: string
+          description: | 
+            A cursor for use in pagination. starting_after is an object ID that defined your place in the list. For instance if you make a list request and receive 100 objects, ending with obj_foo, yor subsequent call can include starting_after=obj_foo in order to fetch the next page in the list
+                    
+      responses:
+        "200":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/ProductResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+# complex objects have schema definitions
+definitions:
+  Product:
+    type: object
+    properties:
+      object_id: 
+        type: string
+      latitude: 
+        type: string
+      longitude: 
+        type:
+          string
+    
+  ProductResponse:
+    required:
+      - data
+    properties:
+      data:
+        type: array
+        items: 
+          $ref: "#/definitions/Product"
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string
