@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import './Map.css';
-import {withGoogleMap, GoogleMap, Marker} from "react-google-maps";
 import {Grid} from "react-bootstrap";
-
+import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl";
 
 class Map extends Component {
 
@@ -20,36 +19,22 @@ class Map extends Component {
     render() {
 
 
-        const GettingStartedGoogleMap = withGoogleMap(props => (
-            <GoogleMap
-                ref={props.onMapLoad}
-                defaultZoom={6}
-                defaultCenter={{lat: 54.592505, lng: -3.933594}}
-                onClick={props.onMapClick}
-            >
-                {props.markers.map((marker, index) => (
-                    <Marker
-                        {...marker}
-                        onRightClick={() => props.onMarkerRightClick(index)}
-                    />
-                ))}
-            </GoogleMap>
-        ));
-
         return (
 
             <div className="Map">
                 <Grid fluid>
                     <h1>Map</h1>
-                    <GettingStartedGoogleMap
-                        containerElement={
-                            <div style={{height: `800px`}}/>
-                        }
-                        mapElement={
-                            <div style={{height: `800px`}}/>
-                        }
-                        markers={this.state.markers}
-                    />
+
+                    <ReactMapboxGl
+                        style={"mapbox://styles/mapbox/basic-v9"}
+                        center={[-1.109970527, 51.52916347]}
+                        accessToken={process.env.REACT_APP_MAPBOX_API_ACCESS_TOKEN}
+                        containerStyle={{
+                            height: "800px",
+                            width: "600px"
+                        }}>
+                    </ReactMapboxGl>
+
                 </Grid>
             </div>
         );

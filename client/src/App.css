@@ -3,6 +3,10 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+h1 {
+    color: white;
+}
+
 .col-xs-5ths,
 .col-sm-5ths,
 .col-md-5ths,
